@@ -41,7 +41,8 @@ environment{
                         docker push jaydocker2024/catalogue:${VERSION}
                         """
                     
-                }
+                     }
+                
                 }
             }
   }
