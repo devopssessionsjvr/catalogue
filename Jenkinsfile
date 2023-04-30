@@ -30,5 +30,19 @@ environment{
                 }
             }
         }
+     stage('Image push to Docker Hub'){
+            steps{
+                script{
+                        withCredentials([usernamePassword(credentialsId: "${DOCKER_REGISTRY_CREDENTIALS}", passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                    
+                        sh """
+                        docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+                        docker tag catalogue:${VERSION}  jaydocker2024/catalogue:${VERSION}
+                        docker push jaydocker2024/catalogue:${VERSION}
+                        """
+                    
+                }
+                }
+            }
   }
 }
