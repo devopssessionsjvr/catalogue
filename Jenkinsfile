@@ -45,6 +45,7 @@ environment{
                 
                 }
             }
+     }
        stage('Deploy to EKS'){
             steps{
                 script{
@@ -59,10 +60,5 @@ environment{
                 
                 }
             }
-      
-      
-                        
-   }
+       }
   }
- }
-}  
