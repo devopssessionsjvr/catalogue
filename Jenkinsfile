@@ -45,7 +45,7 @@ environment{
                 
                 }
             }
-       stage(''Deploy to EKS''){
+       stage('Deploy to EKS'){
             steps{
                 script{
                         withAWS(credentials: 'aws-auth', region: 'ap-south-1') {
