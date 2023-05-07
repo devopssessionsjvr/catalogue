@@ -45,6 +45,14 @@ environment{
                 
                 }
             }
+       stage('Deploy to EKS') {
+            steps {
+                // Update your Kubernetes configuration
+                withAWS(credentials: 'aws-auth', region: 'ap-south-1') {
+                // withCredentials([usernamePassword(credentialsId: 'kubeconfig-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh '''
+                        aws eks update-kubeconfig --name first-cluster --region ap-south-1 --kubeconfig kubeconfig
+                        kubectl apply -f pod.yaml --kubeconfig kubeconfig
   }
 }
 }
