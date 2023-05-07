@@ -53,6 +53,11 @@ environment{
                     sh '''
                         aws eks update-kubeconfig --name first-cluster --region ap-south-1 --kubeconfig kubeconfig
                         kubectl apply -f pod.yaml --kubeconfig kubeconfig
+                            }
+                
+                }
+            }
+                        
   }
 }
 }
