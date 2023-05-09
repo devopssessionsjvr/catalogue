@@ -50,7 +50,7 @@ environment{
        stage('Deploy to EKS'){
             steps{
                 
-              withAWS(credentials: 'aws-auth', region: 'ap-south-1', bindings: [
+              withAWS(credentials: 'aws-auth', region: 'ap-south-1', policy: 'AmazonEC2FullAccess' [
     [
         credentialsId: 'aws-auth',
         accessKeyVariable: 'AWS_ACCESS_KEY_ID',
