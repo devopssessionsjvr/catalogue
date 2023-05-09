@@ -50,7 +50,7 @@ environment{
        stage('Deploy to EKS'){
             steps{
                 
-              withAWS(credentials: 'aws-auth', region: 'ap-south-1')
+              withAWS(credentials: 'aws-auth', region: 'ap-south-1'){
     
      
 
@@ -62,6 +62,7 @@ environment{
                         """
                     
                      }
+              }
                 
                 }
             }
